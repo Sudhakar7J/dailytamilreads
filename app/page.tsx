@@ -3,7 +3,7 @@ import Link from "next/link"
 import useArticlesData from "@/hooks/useArticlesData"
 import { Separator } from "@/components/ui/separator"
 import { ArticleContainer } from "@/components/Categories/ArticleContainer"
-import CookieConsent from "@/components/Cookies/CookieConsent"
+// import CookieConsent from "@/components/Cookies/CookieConsent"
 import LandingCarousel from "@/components/MainPage/LandingCarousel"
 
 export default async function IndexPage({
@@ -94,7 +94,7 @@ export default async function IndexPage({
           </Link>
         )}
       </div>
-      <CookieConsent />
+      {/* <CookieConsent /> */}
     </main>
   )
 }
