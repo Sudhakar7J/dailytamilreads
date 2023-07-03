@@ -20,7 +20,7 @@ export default async function ArticlePage({
           <>
             <FurtherReading
               categorySlug={
-                data.data[0].attributes.category.data.attributes.slug
+                data?.data[0]?.attributes?.category?.data?.attributes?.slug
               }
             />
           </>
