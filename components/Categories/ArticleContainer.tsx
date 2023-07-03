@@ -13,12 +13,11 @@ interface ArticleContainerData {
     imageUrl: {
       data: {
         attributes: {
-          formats: {
-            large: {
+          
               url: string
             }
-          }
-        }
+          
+        
       }
     }
     category: {
@@ -63,8 +62,7 @@ export function ArticleContainer({
       >
         <Image
           src={
-            articlecontainerdata?.attributes?.imageUrl?.data?.attributes
-              ?.formats?.large?.url
+            articlecontainerdata?.attributes?.imageUrl?.data?.attributes?.url
           }
           alt="Article Image"
           width={isHorizontalViewMode ? 120 : 600}
