@@ -1,45 +1,42 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { montfont, playfairDisplay } from "@/fonts/fonts"
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { montfont, playfairDisplay } from "@/fonts/fonts";
 
 interface ArticleContainerData {
-  id: number
+  id: number;
   attributes: {
-    title: string
-    slug: string
+    title: string;
+    slug: string;
     imageUrl: {
       data: {
         attributes: {
-          
-              url: string
-            }
-          
-        
-      }
-    }
+          url: string;
+        };
+      };
+    };
     category: {
       data: {
         attributes: {
-          categoryname: string
-        }
-      }
-    }
-  }
+          categoryname: string;
+        };
+      };
+    };
+  };
 }
 
 interface PaginationData {
   pagination: {
-    page: number
-    pageCount: number
-  }
+    page: number;
+    pageCount: number;
+  };
 }
 
 interface ArticleContainerProps {
-  articlecontainerdata: ArticleContainerData
-  viewMode?: "HORIZONTAL"
+  articlecontainerdata: ArticleContainerData;
+  viewMode?: "HORIZONTAL";
 }
 
 export function ArticleContainer({
@@ -47,9 +44,9 @@ export function ArticleContainer({
   viewMode,
 }: ArticleContainerProps) {
   const categoryname =
-    articlecontainerdata?.attributes?.category?.data?.attributes?.categoryname
+    articlecontainerdata?.attributes?.category?.data?.attributes?.categoryname;
 
-  const isHorizontalViewMode = viewMode === "HORIZONTAL"
+  const isHorizontalViewMode = viewMode === "HORIZONTAL";
 
   return (
     <div className="flex py-2 min-w-width">
@@ -80,5 +77,5 @@ export function ArticleContainer({
         </div>
       </Link>
     </div>
-  )
+  );
 }
