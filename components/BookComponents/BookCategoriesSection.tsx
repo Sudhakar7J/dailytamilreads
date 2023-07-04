@@ -1,24 +1,30 @@
+"use client";
+import React, { useState } from "react";
 import { ThirukuralAdhigaramData } from "@/mockdataconfigs/ThirukuralAdhigaramData";
 import {
   Accordion,
-  AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  AccordionContent,
 } from "../ui/accordion";
 
-export default function BookCategoriesSection() {
+export default function BookCategoriesSection({ setSelectedChapter }: any) {
   const renderedChapters = new Set();
 
+  const handleClickChapter = (chapter: any) => {
+    setSelectedChapter(chapter);
+  };
+
   return (
-    <div>
-      <Accordion type="multiple">
+    <div className="flex flex-col h-screen w-full mt-10">
+      <Accordion type="single" collapsible>
         {ThirukuralAdhigaramData[0].sections.map((section) => (
           <AccordionItem
             value={section.toLowerCase()}
             className="border-none"
             key={section}
           >
-            <div className="font-bold text-2xl text-white my-4">
+            <div className="font-bold text-xl text-white my-4">
               <AccordionTrigger className="hover:no-underline items-center justify-between mx-8">
                 {section}
               </AccordionTrigger>
@@ -33,10 +39,12 @@ export default function BookCategoriesSection() {
                     }
                     renderedChapters.add(kural.chapter);
                     return (
-                      <div key={kural.number}>
-                        <div className="text-white font-md ml-8 py-2 cursor-pointer">
-                          {kural.chapter}
-                        </div>
+                      <div
+                        key={kural.number}
+                        className="text-white font-md ml-8 py-2 cursor-pointer"
+                        onClick={() => handleClickChapter(kural.chapter)}
+                      >
+                        {kural.chapter}
                       </div>
                     );
                   })}

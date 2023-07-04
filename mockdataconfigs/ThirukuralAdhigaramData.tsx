@@ -20158,5 +20158,6 @@ export const ThirukuralAdhigaramData = [
       },
     ],
     sections: ["அறத்துப்பால்", "பொருட்பால்", "காமத்துப்பால்"],
+    authortranscription: ["a", "b", "c"],
   },
 ];
